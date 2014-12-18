@@ -100,5 +100,6 @@ alias uru="xrdb -remove .Xresources &&  xrdb -merge .Xresources"
 #alias vim="nvim"
 alias al="/home/julian/Uni/autologin_uniurb/autologin.sh"
 alias tm="transmission-gtk"
+alias cmc="connmanctl"
 alias grep="grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn"
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
