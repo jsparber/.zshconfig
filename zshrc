@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:/home/julian/.gem/ruby/2.1.0/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/home/julian/.gem/ruby/2.1.0/bin:/home/julian/.gem/ruby/2.2.0/bin:$PATH
 export PATH=$PATH:~/.node_modules/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -80,6 +80,7 @@ export PATH=$PATH:~/.node_modules/bin
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+source ~/.nvm/nvm.sh
 # End of lines added by compinstall
 alias ls='ls --color=auto'
 alias jsw="jekyll serve -w"
@@ -99,6 +100,6 @@ alias aconf="pavucontrol"
 alias uru="xrdb -remove .Xresources &&  xrdb -merge .Xresources"
 #alias vim="nvim"
 alias al="/home/julian/Uni/autologin_uniurb/autologin.sh"
-alias tm="transmission-gtk"
+alias lsw="live-server"
 alias grep="grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn"
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
