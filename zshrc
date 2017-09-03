@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:/home/julian/.gem/ruby/2.1.0/bin:/home/julian/.gem/ruby/2.2.0/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/home/julian/.gem/ruby/2.3.0/bin:/home/julian/.gem/ruby/2.2.0/bin:$PATH
 export PATH=$PATH:~/.node_modules/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -84,23 +84,18 @@ source ~/.nvm/nvm.sh
 # End of lines added by compinstall
 alias ls='ls --color=auto'
 alias jsw="jekyll serve -w"
-alias unmute="amixer -- sset Master unmute"
-alias mute="amixer -- sset Master mute"
-alias ums="amixer -- sset Master unmute && amixer -c 0 -- sset Speaker 100%"
-alias am="alsamixer -c 0"
-alias wc="wicd-curses"
-alias gc="git commit -am"
+alias gc="git commit -m"
 alias gpo="git push origin"
 alias gplo="git pull origin"
 alias gch="git checkout"
 alias gm="git merge"
-alias um="udiskie-umount -a"
-alias skype="ssh docker-skype skype-pulseaudio"
-alias aconf="pavucontrol"
-alias uru="xrdb -remove .Xresources &&  xrdb -merge .Xresources"
-#alias vim="nvim"
-alias al="/home/julian/Uni/autologin_uniurb/autologin.sh"
-alias lsw="live-server"
-alias cmc="connmanctl"
+alias firefox-docker="docker run --tty --interactive --rm -i -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix jsparber/firefox"
+alias firefox-audio="docker run --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/shm:/dev/shm -v /etc/machine-id:/etc/machine-id -v /run/user/$UID/pulse:/run/user/$UID/pulse -v /var/lib/dbus:/var/lib/dbus -v ~/.pulse:/home/firefox/.pulse jsparber/firefox"
+alias humblebundle="docker start humblebundle"
+alias chromium-docker="docker run --tty --interactive --rm -i -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix jsparber/chromium"
+alias chrome-docker="docker run --tty --interactive --rm -i -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix jsparber/chrome"
 alias grep="grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn"
+alias iceweasel-update="sudo cp ~/Projects/iceweasel-config/vendor.js /usr/lib/iceweasel/browser/defaults/preferences/vendor.js"
+alias docker='nocorrect docker'
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+eval "$(grunt --completion=zsh)"
