@@ -51,19 +51,25 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:/home/julian/.gem/ruby/2.3.0/bin:/home/julian/.gem/ruby/2.2.0/bin:$PATH
+# for tilix
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/home/julian/.gem/ruby/2.4.0/bin:/home/julian/.gem/ruby/2.2.0/bin:$PATH
 export PATH=$PATH:~/.node_modules/bin
+export PATH=$PATH:/home/julian/.cargo/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -84,7 +90,7 @@ source ~/.nvm/nvm.sh
 # End of lines added by compinstall
 alias ls='ls --color=auto'
 alias jsw="jekyll serve -w"
-alias gc="git commit -m"
+alias gc="git commit"
 alias gpo="git push origin"
 alias gplo="git pull origin"
 alias gch="git checkout"
@@ -97,5 +103,7 @@ alias chrome-docker="docker run --tty --interactive --rm -i -e DISPLAY=$DISPLAY 
 alias grep="grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn"
 alias iceweasel-update="sudo cp ~/Projects/iceweasel-config/vendor.js /usr/lib/iceweasel/browser/defaults/preferences/vendor.js"
 alias docker='nocorrect docker'
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+alias vim='nvim'
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Djdk.gtk.version=3'
+export CLASSPATH=".:/usr/share/java/antlr-4.7.1-complete.jar:$CLASSPATH"
 eval "$(grunt --completion=zsh)"
